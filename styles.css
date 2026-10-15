@@ -1263,3 +1263,330 @@ p {
     break-inside: avoid;
   }
 }
+/* ===== PORTFOLIO DESIGN REFINEMENT ===== */
+
+@media screen {
+  body {
+    background: #424d65;
+  }
+
+  .site-header {
+    background: rgba(53, 64, 87, 0.96);
+    border-bottom-color: rgba(196, 181, 253, 0.3);
+  }
+
+  .hero {
+    background:
+      radial-gradient(
+        ellipse at 85% 20%,
+        rgba(141, 222, 211, 0.14),
+        transparent 42%
+      ),
+      radial-gradient(
+        ellipse at 10% 10%,
+        rgba(196, 181, 253, 0.16),
+        transparent 55%
+      ),
+      #424d65;
+  }
+
+  .hero h1 {
+    max-width: 760px;
+    font-weight: 750;
+    letter-spacing: -0.065em;
+    background: linear-gradient(
+      115deg,
+      #ffffff 15%,
+      #ddd4ff 62%,
+      #9de8dd 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hero .eyebrow {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 1px solid rgba(141, 222, 211, 0.4);
+    border-radius: 6px;
+    background: rgba(141, 222, 211, 0.07);
+    letter-spacing: 0.12em;
+  }
+
+  .hero-intro {
+    max-width: 570px;
+  }
+
+  .hero-visual {
+    border-radius: 8px 48px 8px 8px;
+    border-color: rgba(196, 181, 253, 0.5);
+    background:
+      linear-gradient(
+        rgba(219, 225, 255, 0.04) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(219, 225, 255, 0.04) 1px,
+        transparent 1px
+      ),
+      linear-gradient(145deg, #596783, #34445b);
+    background-size: 28px 28px, 28px 28px, auto;
+    box-shadow: 18px 18px 0 rgba(196, 181, 253, 0.055);
+  }
+
+  .focus-list > div {
+    gap: 20px;
+  }
+
+  .focus-list span {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(141, 222, 211, 0.3);
+    border-radius: 50%;
+  }
+
+  .expertise-strip {
+    justify-content: center;
+    gap: 22px 45px;
+    margin-top: 65px;
+    padding: 25px;
+    border: 1px solid rgba(196, 181, 253, 0.25);
+    border-radius: 12px 12px 0 0;
+    background: rgba(36, 48, 70, 0.35);
+    color: #f0eaff;
+  }
+
+  #about {
+    background: #56627a;
+  }
+
+  .section-heading h2 {
+    max-width: 750px;
+  }
+
+  .section-heading .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-heading .eyebrow::before {
+    width: 28px;
+    height: 2px;
+    background: currentColor;
+    content: "";
+  }
+
+  .about-details {
+    padding: 25px 28px;
+    border-left: 3px solid var(--turquoise);
+    border-radius: 0 16px 16px 0;
+    background: rgba(31, 43, 64, 0.18);
+  }
+
+  #experience {
+    background: #3e4a61;
+  }
+
+  .experience-list {
+    position: relative;
+    gap: 25px;
+    margin-left: 8px;
+    padding-left: 32px;
+    border-left: 1px solid rgba(141, 222, 211, 0.45);
+  }
+
+  .experience-card {
+    position: relative;
+    border-radius: 7px 20px 20px 7px;
+    border-color: rgba(222, 228, 255, 0.15);
+    background: #4b5871;
+    box-shadow: 0 12px 28px rgba(25, 34, 52, 0.1);
+  }
+
+  .experience-card::before {
+    position: absolute;
+    top: 39px;
+    left: -39px;
+    width: 11px;
+    height: 11px;
+    border: 3px solid #3e4a61;
+    border-radius: 50%;
+    background: var(--turquoise);
+    box-shadow: 0 0 0 1px var(--turquoise);
+    content: "";
+  }
+
+  .experience-card:first-child {
+    border-top: 3px solid var(--lavender);
+    background: linear-gradient(115deg, #58627f, #4b5871);
+  }
+
+  .company {
+    color: #e0d6ff;
+    font-size: 1.15rem;
+  }
+
+  .experience-body h3 {
+    line-height: 1.4;
+  }
+
+  #skills {
+    background: #536077;
+  }
+
+  .skill-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px 24px 8px 8px;
+    border-top: 3px solid var(--lavender);
+    background: #424e68;
+  }
+
+  .skill-card:nth-child(2) {
+    border-top-color: var(--turquoise);
+    background: #345964;
+  }
+
+  .skill-card:nth-child(3) {
+    border-top-color: #b5caff;
+    background: #414f78;
+  }
+
+  .skill-card:nth-child(4) {
+    border-top-color: #e8c39f;
+    background: #63566b;
+  }
+
+  .card-number {
+    margin-bottom: 24px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 2.7rem;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.07em;
+  }
+
+  .skill-card p {
+    color: #edf0f8;
+  }
+
+  #projects {
+    background: #39485e;
+  }
+
+  .project-card {
+    border-radius: 12px 12px 24px 24px;
+    background: #4e5d76;
+  }
+
+  .project-art {
+    height: 220px;
+    border-bottom: 2px solid rgba(196, 181, 253, 0.45);
+    background-color: #34445e;
+  }
+
+  .project-status {
+    display: inline-block;
+    padding: 5px 9px;
+    border: 1px solid rgba(141, 222, 211, 0.35);
+    border-radius: 4px;
+    background: rgba(141, 222, 211, 0.06);
+  }
+
+  #education {
+    background: #4a566e;
+  }
+
+  .education-card {
+    border-radius: 10px;
+    background: rgba(34, 46, 65, 0.22);
+  }
+
+  .education-marker {
+    border-radius: 8px;
+    background: rgba(196, 181, 253, 0.15);
+  }
+
+  .resume-section {
+    padding-top: 35px;
+    background: #4a566e;
+  }
+
+  .resume-panel {
+    border-radius: 12px;
+    background: linear-gradient(110deg, #615f82, #465e73);
+  }
+
+  #contact {
+    background: linear-gradient(135deg, #4a566e, #354b60);
+  }
+
+  .contact-panel {
+    padding-block: 25px;
+  }
+
+  .contact-links a {
+    border-radius: 8px;
+    border-left: 3px solid var(--lavender);
+    background: rgba(196, 181, 253, 0.06);
+  }
+
+  .contact-links a:nth-child(2) {
+    border-left-color: var(--turquoise);
+  }
+
+  .contact-links a:nth-child(3) {
+    border-left-color: #b5caff;
+  }
+
+  .site-footer {
+    background: #354358;
+  }
+}
+
+@media screen and (min-width: 1101px) {
+  .hero-grid {
+    grid-template-columns: 1.45fr 0.85fr;
+    gap: 65px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.7rem, 5.4vw, 5rem);
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .experience-list {
+    margin-left: 5px;
+    padding-left: 20px;
+  }
+
+  .experience-card::before {
+    left: -27px;
+  }
+
+  .hero-visual {
+    box-shadow: 8px 8px 0 rgba(196, 181, 253, 0.055);
+  }
+
+  .expertise-strip {
+    gap: 15px 25px;
+    padding: 22px 16px;
+  }
+
+  .project-art {
+    height: 185px;
+  }
+}
+
+@media (forced-colors: active) {
+  .hero h1 {
+    background: none;
+    color: CanvasText;
+  }
+}
