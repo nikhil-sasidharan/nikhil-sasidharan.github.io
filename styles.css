@@ -1648,3 +1648,53 @@ p {
 @media(max-width:760px){.hero-personal{padding-top:40px}.hero-personal .hero-grid{grid-template-columns:1fr;gap:32px}.hero-personal h1{font-size:clamp(2.8rem,11vw,4.1rem)}.personal-portrait{max-width:300px}.profile-facts{margin-top:38px;padding:22px 0}.profile-facts>div{padding:0 16px}.profile-facts dd{font-size:.82rem}.ribbon-group{gap:22px;padding-right:22px}}
 @media(prefers-reduced-motion:reduce){.ribbon-track{animation:none;width:auto}.ribbon-group{flex-wrap:wrap;padding:0 20px;gap:14px}.ribbon-group[aria-hidden="true"]{display:none}}
 @media print{.hero-personal h1,.hero-personal h1 span{color:#222}.personal-portrait,.hero-personal .hero-glow,.ribbon-controls{display:none}.profile-facts{background:white;color:#222;box-shadow:none}.skills-ribbon{background:white;color:#222}.ribbon-track{animation:none;width:auto}.ribbon-group{flex-wrap:wrap}.ribbon-group[aria-hidden="true"]{display:none}}
+
+/* Approved portrait framing, textured hero and white content sections. */
+.hero-personal{background:radial-gradient(ellipse at 82% 15%,#aba1d22b,transparent 50%),#424d65;overflow:hidden}
+.hero-personal::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(#d9dbf209 1px,transparent 1px),linear-gradient(90deg,#d9dbf209 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(90deg,transparent,#000 60%);pointer-events:none}
+.hero-personal::after{content:"";position:absolute;right:-210px;top:-140px;width:650px;height:650px;border:1px solid #d0bfff25;border-radius:50%;box-shadow:0 0 0 75px #d0bfff08,0 0 0 150px #a2e5da05;z-index:-1;pointer-events:none}
+.personal-portrait img{aspect-ratio:4/4.5;object-fit:cover;object-position:center 90%;border-radius:24px}
+.personal-portrait::before{inset:-10px 15px 12px -10px;border-radius:30px}
+@media screen {
+  #about,#experience,#skills,#projects,#education,#resume,#contact {
+    --text:#25334a;
+    --muted:#526075;
+    --lavender:#63528b;
+    --turquoise:#246b68;
+    --border:#dfe3eb;
+    --surface:#ffffff;
+    --surface-deep:#f3f4f7;
+    --shadow:0 12px 30px rgba(35,48,72,.045);
+    color:var(--text);
+    background:#ffffff;
+  }
+  #about,#experience,#skills,#projects,#education,#contact{border-bottom:1px solid #e6e8ee}
+  #about .about-details{background:#f6f5f9;border-left-color:#9f8cc7}
+  #experience .experience-list{border-left-color:#b5aaa0}
+  #experience .experience-card{background:#fff;border-color:#dfe3eb;box-shadow:var(--shadow)}
+  #experience .experience-card:first-child{background:#f7f6fa;border-top-color:#9881be}
+  #experience .experience-card::before{background:#71618e;border-color:#fff;box-shadow:0 0 0 1px #9881be}
+  #experience .company{color:#594878}
+  #experience .tags span,#projects .tags span{color:#526075;background:#f7f8fa;border-color:#e0e4ec}
+  #skills .skill-card{background:#faf9fc;border-color:#e2dbea;border-top-color:#9881be;box-shadow:none}
+  #skills .skill-card:nth-child(2){background:#f5f9f8;border-top-color:#5c9690}
+  #skills .skill-card:nth-child(3){background:#f6f8fc;border-top-color:#788fb7}
+  #skills .skill-card:nth-child(4){background:#fbf8f4;border-top-color:#b5946a}
+  #skills .card-number{color:#736582}
+  #skills .skill-card p{color:#526075}
+  #projects .project-card{background:#fff;border-color:#dfe3eb}
+  #projects .project-status{color:#246b68;border-color:#bbd5cf;background:#f0f7f5}
+  #projects .project-art{border-bottom-color:#c7b8df}
+  #education .education-card{background:#fff;border-color:#dfe3eb}
+  #education .education-marker{background:#f0eef6;border-color:#d8d0e6;color:#63528b}
+  #resume .resume-panel{background:#f6f5f9;border-color:#ded7e9}
+  #contact .contact-links a{background:#faf9fc;border-color:#dfe3eb;border-left-color:#9881be}
+  #contact .contact-links a:nth-child(2){border-left-color:#5c9690}
+  #contact .contact-links a:nth-child(3){border-left-color:#788fb7}
+  #contact .contact-links a:hover{background:#efebf6;border-color:#9881be}
+  .site-footer{background:#fff;border-color:#e2e5ec;color:#526075}
+  .footer-inner{color:#526075}
+  .footer-inner a:hover{color:#63528b}
+  main>.section:not(#home) a:focus-visible{outline-color:#63528b}
+}
+@media print{.hero-personal::before,.hero-personal::after{display:none}}
