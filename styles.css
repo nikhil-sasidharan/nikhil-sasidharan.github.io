@@ -1590,3 +1590,24 @@ p {
     color: CanvasText;
   }
 }
+/* Show all navigation links on smaller screens */
+@media screen and (max-width: 760px) {
+  .main-nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2px 8px;
+    overflow: visible;
+    margin-top: 10px;
+  }
+
+  .main-nav a {
+    padding: 10px 4px;
+    text-align: center;
+    font-size: 0.78rem;
+  }
+
+  .main-nav a::after {
+    right: 15%;
+    left: 15%;
+  }
+}
