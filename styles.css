@@ -1611,3 +1611,42 @@ p {
     left: 15%;
   }
 }
+
+/* Personal introduction and animated skills ribbon */
+.hero-personal{isolation:isolate;padding-top:65px;padding-bottom:0}
+.hero-personal .hero-grid{grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr);gap:65px}
+.hero-personal .hero-content{padding:0}
+.hero-personal h1{background:none;color:var(--text);font-size:clamp(3rem,6vw,5.9rem);font-weight:500;letter-spacing:-.065em;line-height:1.04;margin-bottom:25px}
+.hero-personal h1 span{display:block;color:var(--lavender)}
+.hero-personal .eyebrow{padding:0;border:0;background:none}
+.hero-lead{font-size:clamp(1.25rem,2.2vw,1.65rem);line-height:1.4;max-width:550px;margin-bottom:18px}
+.hero-personal .hero-intro{max-width:500px;font-size:1rem}
+.personal-portrait{position:relative;width:100%;max-width:350px;margin:12px auto 0;transition:transform .35s}
+.personal-portrait::before{content:"";position:absolute;inset:-12px 15px 20px -12px;border:1px solid #c4b5fd80;border-radius:95px 16px 16px 16px;z-index:-1}
+.personal-portrait img{display:block;width:100%;height:auto;aspect-ratio:1/1.08;object-fit:cover;object-position:center 65%;border-radius:80px 12px 0 0}
+.personal-portrait figcaption{padding:17px 20px;background:#344258;border-radius:0 0 12px 12px;font-size:.9rem}
+.personal-portrait small{display:block;color:var(--turquoise);margin-top:5px;font-size:.76rem}
+.profile-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:55px 0 36px;padding:26px 8px;background:#d6d5db;color:#30394b;border-radius:12px;box-shadow:0 14px 35px #26314922}
+.profile-facts>div{padding:0 22px;border-right:1px solid #30394b25;min-width:0}
+.profile-facts>div:last-child{border:0}
+.profile-facts dt{font-size:.65rem;letter-spacing:.12em;color:#555c70}
+.profile-facts dd{margin:10px 0 0;font-size:.9rem;font-weight:600;line-height:1.5}
+.available-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#227564;margin-right:7px}
+.skills-ribbon{background:#bfaeeb;color:#30364c;padding-top:12px}
+.ribbon-controls{display:flex;align-items:center;justify-content:space-between;gap:15px;padding-bottom:10px;font-size:.65rem;letter-spacing:.13em}
+#motion-toggle{padding:7px 13px;min-height:36px;border:1px solid #30364c60;border-radius:24px;background:transparent;color:#30364c;font-size:.75rem;cursor:pointer;letter-spacing:0}
+.ribbon-window{overflow:hidden;border-top:1px solid #30364c30;padding:20px 0}
+.ribbon-track{display:flex;width:max-content;animation:skills-scroll 40s linear infinite}
+.ribbon-group{display:flex;align-items:center;flex-shrink:0;gap:30px;padding-right:30px}
+.ribbon-group>span{white-space:nowrap;text-transform:uppercase;font-size:.85rem;letter-spacing:.09em}
+.ribbon-star{color:#565078}
+.ribbon-window:hover .ribbon-track{animation-play-state:paused}
+.motion-paused .ribbon-track,.motion-paused .hero-glow{animation-play-state:paused}
+.hero-personal .hero-glow{animation:personal-glow 14s ease-in-out infinite alternate;pointer-events:none}
+@keyframes skills-scroll{to{transform:translateX(-50%)}}
+@keyframes personal-glow{to{transform:translate(-120px,70px)}}
+@media(hover:hover){.personal-portrait:hover{transform:translateY(-5px)}}
+@media(max-width:900px){.hero-personal .hero-grid{gap:40px}.profile-facts{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 0}.profile-facts>div:nth-child(2){border:0}}
+@media(max-width:760px){.hero-personal{padding-top:40px}.hero-personal .hero-grid{grid-template-columns:1fr;gap:32px}.hero-personal h1{font-size:clamp(2.8rem,11vw,4.1rem)}.personal-portrait{max-width:300px}.profile-facts{margin-top:38px;padding:22px 0}.profile-facts>div{padding:0 16px}.profile-facts dd{font-size:.82rem}.ribbon-group{gap:22px;padding-right:22px}}
+@media(prefers-reduced-motion:reduce){.ribbon-track{animation:none;width:auto}.ribbon-group{flex-wrap:wrap;padding:0 20px;gap:14px}.ribbon-group[aria-hidden="true"]{display:none}#motion-toggle{display:none}}
+@media print{.hero-personal h1,.hero-personal h1 span{color:#222}.personal-portrait,.hero-personal .hero-glow,.ribbon-controls{display:none}.profile-facts{background:white;color:#222;box-shadow:none}.skills-ribbon{background:white;color:#222}.ribbon-track{animation:none;width:auto}.ribbon-group{flex-wrap:wrap}.ribbon-group[aria-hidden="true"]{display:none}}
