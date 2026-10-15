@@ -186,23 +186,3 @@ languageButtons.forEach((button) => {
 });
 
 updateActiveSection();
-
-/* Pause decorative motion; keep the control translated. */
-const motionToggle = document.getElementById("motion-toggle");
-function updateMotionLabel() {
-  if (!motionToggle) return;
-  const paused = document.documentElement.classList.contains("motion-paused");
-  const german = document.documentElement.lang === "de";
-  motionToggle.textContent = german
-    ? (paused ? "Animation fortsetzen" : "Animation pausieren")
-    : (paused ? "Resume motion" : "Pause motion");
-  motionToggle.setAttribute("aria-pressed", String(paused));
-}
-if (motionToggle) {
-  motionToggle.addEventListener("click", () => {
-    document.documentElement.classList.toggle("motion-paused");
-    updateMotionLabel();
-  });
-  languageButtons.forEach(button => button.addEventListener("click", updateMotionLabel));
-  updateMotionLabel();
-}
