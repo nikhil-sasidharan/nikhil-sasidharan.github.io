@@ -136,6 +136,19 @@ animation:none;transition:none;transform:none}
 @media(max-width:760px){#experience .experience-editorial .intro{grid-template-columns:1fr;gap:18px}#experience .experience-editorial .topline{flex-direction:column;align-items:flex-start;gap:8px}#experience .experience-editorial .date{text-align:left}}
 @media print{#experience .experience-editorial details::details-content{display:block}}
 </style>
+<style>#projects .practical-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+#projects .practical-card{--accent:#7155a0;position:relative;padding:28px;border:1px solid #ded6eb;border-top:3px solid var(--accent);border-radius:14px;background:linear-gradient(145deg,#f4f0f9,#fff 65%)}
+#projects .practical-card:nth-child(2){--accent:#287c77;background:linear-gradient(145deg,#edf7f4,#fff 65%);border-color:#cde4dc}
+#projects .practical-card:nth-child(3){--accent:#3c699c;background:linear-gradient(145deg,#eef4fb,#fff 65%);border-color:#d1deef}
+#projects .practical-card:nth-child(4){--accent:#946b2d;background:linear-gradient(145deg,#faf4e9,#fff 65%);border-color:#e9dcc5}
+#projects .practical-card h3{font:600 23px/1.3 "Space Grotesk",sans-serif;letter-spacing:-.5px;color:#182b42;margin:17px 0 15px}
+#projects .practical-card p{color:#52647a;font-size:15px;line-height:1.8}
+#projects .practical-card .practical-label{font:500 11px/1.7 "IBM Plex Mono",monospace;color:var(--accent);margin-top:18px}
+#projects .practical-number{display:inline-block;font:500 13px "IBM Plex Mono",monospace;color:var(--accent)}
+#projects .section-heading h2{font-size:clamp(32px,3.5vw,48px)}
+@media(max-width:760px){#projects .practical-grid{grid-template-columns:1fr}}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){#projects .practical-card{transition:transform .25s,box-shadow .25s}#projects .practical-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px #182b4210}}
+</style>
 </head>
 
 <body>
@@ -154,7 +167,7 @@ animation:none;transition:none;transform:none}
         <a href="#about" data-de="Über mich">About</a>
         <a href="#experience" data-de="Erfahrung">Experience</a>
         <a href="#skills" data-de="Kompetenzen">Skills</a>
-        <a href="#projects" data-de="Projekte">Projects</a>
+        <a href="#projects" data-de="Praxis">Practical Work</a>
         <a href="#education" data-de="Ausbildung">Education</a>
         <a href="#contact" data-de="Kontakt">Contact</a>
       </nav>
@@ -219,61 +232,14 @@ animation:none;transition:none;transform:none}
 <div class="footnote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5zM3 12l9 5 9-5M3 16l9 5 9-5"/></svg><span data-de="Produktionserfahrung. Supply-Chain-Perspektive. Analytischer Ansatz.">Production experience. Supply chain perspective. Analytical approach.</span></div>
 </div></div></section>
 
-    <section id="projects" class="section section-tinted">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow" data-de="04 / PROJEKTE">04 / PROJECTS</p>
-          <h2 data-de="Geschäftsfragen. Analytische Ansätze.">
-            Business questions.<br>Analytical approaches.
-          </h2>
-          <p class="section-intro"
-             data-de="Geplante eigenständige Demonstrationen mit vollständig synthetischen Daten. Diese Projekte sind noch nicht veröffentlicht und stellen keine Ergebnisse aus Beschäftigungsverhältnissen dar.">
-            Planned independent demonstrations using entirely synthetic data.
-            These projects are not yet published and do not represent
-            employer project results.
-          </p>
-        </div>
+    <section id="projects" class="section"><div class="container practical-projects">
+<div class="section-heading"><p class="eyebrow" data-de="04 / PRAXIS &amp; MASTERARBEIT">04 / PRACTICAL WORK &amp; THESIS</p><h2 data-de="Erfahrung in der Anwendung.">Experience put into practice.</h2><p class="section-intro" data-de="Ausgewählte Beiträge aus meiner Berufserfahrung und meinem Masterstudium.">Selected contributions from my professional experience and master’s studies.</p></div>
+<div class="practical-grid"><article class="practical-card"><span class="practical-number" aria-hidden="true">01</span><p class="practical-label" data-de="Olympus · Berufliche Erfahrung">Olympus · Professional experience</p><h3 data-de="Bestände &amp; Nachschub">Inventory &amp; Replenishment</h3><p data-de="Unterstützte Bestandsanalysen, Meldebestandsprüfungen und die Validierung von Planungsparametern als Grundlage für die Supply-Chain-Planung.">Supported inventory analysis, reorder-point reviews and planning-parameter validation to inform supply planning.</p></article>
+<article class="practical-card"><span class="practical-number" aria-hidden="true">02</span><p class="practical-label" data-de="Olympus · Berufliche Erfahrung">Olympus · Professional experience</p><h3 data-de="Berichtsautomatisierung">Reporting Automation</h3><p data-de="Entwickelte und automatisierte wiederkehrende operative Analysen und Berichtsabläufe mit Excel und ergänzenden Analysewerkzeugen.">Developed and automated recurring operational analysis and reporting workflows using Excel and related analytics tools.</p></article>
+<article class="practical-card"><span class="practical-number" aria-hidden="true">03</span><p class="practical-label" data-de="Synthite · Projektbeiträge">Synthite · Project contributions</p><h3 data-de="Produktion &amp; Systeme">Production &amp; Systems</h3><p data-de="Unterstützte die Migration und Validierung operativer Daten bei der SAP-S/4HANA-Einführung sowie die Inbetriebnahme einer kontinuierlichen Dampfsterilisationsanlage.">Supported operational-data migration and validation during SAP S/4HANA implementation, and commissioning of a continuous steam sterilisation system.</p></article>
+<article class="practical-card"><span class="practical-number" aria-hidden="true">04</span><p class="practical-label" data-de="Hochschule Hof · Masterarbeit">Hof University · Master’s thesis</p><h3 data-de="Masterarbeit — Operational Excellence">Master’s Thesis — Operational Excellence</h3><p data-de="Forschungsinhalte und Ergebnisse werden nicht öffentlich geteilt.">Research details and results are not publicly shared.</p></article></div></div></section>
 
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-art art-inventory" aria-hidden="true">
-              <span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <div class="project-content">
-              <p class="project-status" data-de="GEPLANTE DEMONSTRATION">
-                PLANNED DEMONSTRATION
-              </p>
-              <h3 data-de="Bestandsanalyse-Dashboard">Inventory Health Dashboard</h3>
-              <p data-de="Welche Artikel benötigen Aufmerksamkeit? Ein geplantes Dashboard zu Bestandsreichweite, ABC-Klassen und langsam drehenden Beständen.">
-                Which items need attention? A planned dashboard exploring
-                stock coverage, ABC classes and slow-moving inventory.
-              </p>
-              <div class="tags"><span>Excel</span><span>Power BI</span></div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-art art-planning" aria-hidden="true">
-              <span></span><span></span><span></span><span></span>
-            </div>
-            <div class="project-content">
-              <p class="project-status" data-de="GEPLANTE DEMONSTRATION">
-                PLANNED DEMONSTRATION
-              </p>
-              <h3 data-de="Produktions- und Kapazitätsplanung">Production &amp; Capacity Planning</h3>
-              <p data-de="Wie lässt sich Bedarf mit verfügbarer Kapazität abstimmen? Ein geplantes Modell zum Vergleich von Produktionslast und Kapazitätsgrenzen.">
-                How can demand be balanced against available capacity?
-                A planned model comparing production workload and
-                capacity constraints.
-              </p>
-              <div class="tags"><span>Excel</span><span>Power Query</span></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="education" class="section"><div class="container"><div class="education-editorial"><div class="label"><span>05</span> <span class="label-text" data-de="Ausbildung">Education</span></div>
+<section id="education" class="section"><div class="container"><div class="education-editorial"><div class="label"><span>05</span> <span class="label-text" data-de="Ausbildung">Education</span></div>
 <div class="heading"><h2><span data-de="Technische Grundlagen.">Engineering roots.</span><br><em data-de="Betrieblicher Fokus.">Operational focus.</em></h2><p data-de="Technische Grundlagen im Maschinenbau, vertieft durch ein Masterstudium in Operational Excellence.">Technical foundations in mechanical engineering, developed through master’s studies in Operational Excellence.</p></div>
 <article class="qualification"><div class="qualification-top"><div class="badge" aria-hidden="true">MBA<br>&amp; Eng.</div><div><p class="level" data-de="Masterstudium">Master’s studies</p><h3>Operational Excellence</h3><p class="school" data-de="Hochschule Hof · Deutschland">Hof University of Applied Sciences<br>Germany</p></div><div class="date" data-de="OKT. 2023 — SEPT. 2026">OCT 2023 — SEP 2026</div></div><div class="qualification-detail"><p data-de="Schwerpunkte: Supply Chain Management, Produktionslogistik, Qualität, Fabrikplanung, Leadership und Change Management.">Focus areas: supply chain management, production logistics, quality, factory planning, leadership and change management.</p></div></article>
 <article class="qualification"><div class="qualification-top"><div class="badge" aria-hidden="true">BTech</div><div><p class="level">Bachelor of Technology</p><h3 data-de="Maschinenbau">Mechanical Engineering</h3><p class="school" data-de="APJ Abdul Kalam Technological University · Indien">APJ Abdul Kalam Technological University<br>India</p></div><div class="date" data-de="JULI 2015 — JULI 2019">JUL 2015 — JUL 2019</div></div></article>
@@ -296,7 +262,7 @@ animation:none;transition:none;transform:none}
 const preference=window.matchMedia("(prefers-reduced-motion: reduce)");
 if(!("IntersectionObserver" in window)||!("animate" in Element.prototype))return;
 const running=new Set();
-const selector="#about .intro-layout,#about .expertise,#about .approach,#experience .intro,#experience .job,#skills .intro,#skills .deck article,#projects .section-heading,#projects .project-card,#education .heading,#education .qualification,#education .languages,#contact .contact-surface";
+const selector="#about .intro-layout,#about .expertise,#about .approach,#experience .intro,#experience .job,#skills .intro,#skills .deck article,#projects .section-heading,#projects .practical-card,#education .heading,#education .qualification,#education .languages,#contact .contact-surface";
 const targets=Array.from(document.querySelectorAll(selector));
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
