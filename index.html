@@ -65,6 +65,29 @@ button,input,textarea,select,.main-nav{font-family:"DM Sans",sans-serif}
 #skills .skills-editorial .tile-top{letter-spacing:.06em;flex-wrap:wrap;gap:6px}
 #education .education-editorial .date{white-space:normal}
 </style>
+<style>
+/* Gentle neon availability indicators. */
+.available-dot,#contact .contact-editorial .availability::before{
+display:inline-block;width:7px;height:7px;flex-shrink:0;border-radius:50%;
+background:#19b97a;box-shadow:0 0 0 3px rgba(25,185,122,.12),0 0 9px rgba(25,185,122,.3);
+}
+#contact .contact-editorial .availability::before{
+background:#62edb0;box-shadow:0 0 0 3px rgba(98,237,176,.12),0 0 10px rgba(98,237,176,.4);
+}
+@media(prefers-reduced-motion:no-preference){
+.available-dot{animation:availability-neon-light 2.8s ease-in-out infinite}
+#contact .contact-editorial .availability::before{animation:availability-neon-dark 2.8s ease-in-out infinite}
+}
+@keyframes availability-neon-light{
+0%,100%{box-shadow:0 0 0 2px rgba(25,185,122,.1),0 0 6px rgba(25,185,122,.25)}
+50%{box-shadow:0 0 0 5px rgba(25,185,122,.08),0 0 13px rgba(25,185,122,.5)}
+}
+@keyframes availability-neon-dark{
+0%,100%{box-shadow:0 0 0 2px rgba(98,237,176,.1),0 0 6px rgba(98,237,176,.3)}
+50%{box-shadow:0 0 0 5px rgba(98,237,176,.1),0 0 14px rgba(98,237,176,.65)}
+}
+@media print{.available-dot,#contact .contact-editorial .availability::before{animation:none;box-shadow:none}}
+</style>
 </head>
 
 <body>
