@@ -149,6 +149,25 @@ animation:none;transition:none;transform:none}
 @media(max-width:760px){#projects .practical-grid{grid-template-columns:1fr}}
 @media(hover:hover) and (prefers-reduced-motion:no-preference){#projects .practical-card{transition:transform .25s,box-shadow .25s}#projects .practical-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px #182b4210}}
 </style>
+<style>
+/* Align Practical Work with the approved section and card typography. */
+#projects .practical-section-label{display:flex;align-items:center;gap:10px;font:500 11px "IBM Plex Mono",monospace;letter-spacing:1.5px;color:#287c77;margin:0 0 24px}
+#projects .practical-section-label>span:first-child{background:#182b42;color:#fff;border-radius:4px;padding:6px 8px}
+#projects .practical-intro{display:grid;grid-template-columns:1fr 1.25fr;gap:60px;align-items:end}
+#projects .practical-intro h2{font:600 clamp(32px,3.5vw,48px)/1.12 "Space Grotesk",sans-serif;letter-spacing:-1.3px;margin:0}
+#projects .practical-intro h2 em{font-style:normal;color:#287c77}
+#projects .practical-intro .section-intro{font:400 16px/1.8 "DM Sans",sans-serif;color:#56677b;margin:0;max-width:none}
+#projects .practical-heading{margin-bottom:32px}
+#projects .practical-card{border-radius:16px;background:#fff;font-family:"DM Sans",sans-serif}
+#projects .practical-card:nth-child(n){background:#fff;border-top-color:var(--accent)}
+#projects .practical-number{display:grid;place-items:center;width:38px;height:38px;background:#f1eef7;border-radius:10px}
+#projects .practical-card:nth-child(2) .practical-number{background:#eaf6f2}
+#projects .practical-card:nth-child(3) .practical-number{background:#eef4fb}
+#projects .practical-card:nth-child(4) .practical-number{background:#faf4e9}
+#projects .practical-card h3{font-size:23px;line-height:1.3;margin:14px 0}
+#projects .practical-card .thesis-title{font:500 16px/1.6 "Space Grotesk",sans-serif;letter-spacing:0;color:#52647a;margin:0 0 14px}
+@media(max-width:760px){#projects .practical-intro{grid-template-columns:1fr;gap:18px}}
+</style>
 </head>
 
 <body>
@@ -233,11 +252,11 @@ animation:none;transition:none;transform:none}
 </div></div></section>
 
     <section id="projects" class="section"><div class="container practical-projects">
-<div class="section-heading"><p class="eyebrow" data-de="04 / PRAXIS &amp; MASTERARBEIT">04 / PRACTICAL WORK &amp; THESIS</p><h2 data-de="Erfahrung in der Anwendung.">Experience put into practice.</h2><p class="section-intro" data-de="Ausgewählte Beiträge aus meiner Berufserfahrung und meinem Masterstudium.">Selected contributions from my professional experience and master’s studies.</p></div>
+<div class="section-heading practical-heading"><p class="practical-section-label"><span aria-hidden="true">04</span><span data-de="PRAXIS &amp; MASTERARBEIT">PRACTICAL WORK &amp; THESIS</span></p><div class="practical-intro"><h2><span data-de="Erfahrung.">Experience.</span><br><em data-de="In der Anwendung.">Put into practice.</em></h2><p class="section-intro" data-de="Ausgewählte Beiträge aus meiner Berufserfahrung und meinem Masterstudium.">Selected contributions from my professional experience and master’s studies.</p></div></div>
 <div class="practical-grid"><article class="practical-card"><span class="practical-number" aria-hidden="true">01</span><p class="practical-label" data-de="AB InBev · Projekt">AB InBev · Project</p><h3 data-de="Bestellverhalten von Kunden">Customer Ordering Behaviour</h3><p data-de="Projekt zum Bestellverhalten von Kunden während meines Praktikums im Auftragsmanagement bei AB InBev.">Project on customer ordering behaviour during my order management internship at AB InBev.</p></article>
 <article class="practical-card"><span class="practical-number" aria-hidden="true">02</span><p class="practical-label" data-de="Olympus · Berufliche Erfahrung">Olympus · Professional experience</p><h3 data-de="Berichtsautomatisierung">Reporting Automation</h3><p data-de="Entwickelte und automatisierte wiederkehrende operative Analysen und Berichtsabläufe mit Excel und ergänzenden Analysewerkzeugen.">Developed and automated recurring operational analysis and reporting workflows using Excel and related analytics tools.</p></article>
 <article class="practical-card"><span class="practical-number" aria-hidden="true">03</span><p class="practical-label" data-de="Synthite · Projektbeiträge">Synthite · Project contributions</p><h3 data-de="Produktion &amp; Systeme">Production &amp; Systems</h3><p data-de="Unterstützte die Migration und Validierung operativer Daten bei der SAP-S/4HANA-Einführung sowie die Inbetriebnahme einer kontinuierlichen Dampfsterilisationsanlage.">Supported operational-data migration and validation during SAP S/4HANA implementation, and commissioning of a continuous steam sterilisation system.</p></article>
-<article class="practical-card"><span class="practical-number" aria-hidden="true">04</span><p class="practical-label" data-de="Olympus · Hochschule Hof · Masterarbeit">Olympus · Hof University of Applied Sciences · Master’s thesis</p><h3>Operational improvement of external chemical inventory management: A process-oriented study</h3><p data-de="Forschungsinhalte und Ergebnisse werden nicht öffentlich geteilt.">Research details and results are not publicly shared.</p></article></div></div></section>
+<article class="practical-card"><span class="practical-number" aria-hidden="true">04</span><p class="practical-label" data-de="Olympus · Hochschule Hof">Olympus · Hof University</p><h3 data-de="Masterarbeit">Master’s Thesis</h3><h4 class="thesis-title">Operational improvement of external chemical inventory management: A process-oriented study</h4><p data-de="Forschungsinhalte und Ergebnisse werden nicht öffentlich geteilt.">Research details and results are not publicly shared.</p></article></div></div></section>
 
 <section id="education" class="section"><div class="container"><div class="education-editorial"><div class="label"><span>05</span> <span class="label-text" data-de="Ausbildung">Education</span></div>
 <div class="heading"><h2><span data-de="Technische Grundlagen.">Engineering roots.</span><br><em data-de="Betrieblicher Fokus.">Operational focus.</em></h2><p data-de="Technische Grundlagen im Maschinenbau, vertieft durch ein Masterstudium in Operational Excellence.">Technical foundations in mechanical engineering, developed through master’s studies in Operational Excellence.</p></div>
