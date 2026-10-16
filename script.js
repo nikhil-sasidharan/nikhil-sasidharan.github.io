@@ -186,3 +186,28 @@ languageButtons.forEach((button) => {
 });
 
 updateActiveSection();
+
+/* Reading progress: no layout writes inside the scroll handler. */
+const readingProgressFill = document.getElementById("reading-progress-fill");
+let progressFramePending = false;
+function updateReadingProgress() {
+  const scrollable = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+  const fraction = scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0;
+  if (readingProgressFill) readingProgressFill.style.transform = "scaleX(" + fraction + ")";
+  progressFramePending = false;
+}
+function requestReadingProgress() {
+  if (!progressFramePending) {
+    progressFramePending = true;
+    window.requestAnimationFrame(updateReadingProgress);
+  }
+}
+window.addEventListener("scroll", requestReadingProgress, { passive: true });
+window.addEventListener("resize", requestReadingProgress);
+window.addEventListener("load", requestReadingProgress);
+languageButtons.forEach(button => button.addEventListener("click", requestReadingProgress));
+if ("ResizeObserver" in window) {
+  const progressResizeObserver = new ResizeObserver(requestReadingProgress);
+  progressResizeObserver.observe(document.body);
+}
+updateReadingProgress();

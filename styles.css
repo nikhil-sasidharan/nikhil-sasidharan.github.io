@@ -1698,3 +1698,90 @@ p {
   main>.section:not(#home) a:focus-visible{outline-color:#63528b}
 }
 @media print{.hero-personal::before,.hero-personal::after{display:none}}
+
+/* Reading progress and coordinated card accents */
+.reading-progress{position:absolute;top:0;left:0;width:100%;height:3px;background:rgba(255,255,255,.08);pointer-events:none}
+#reading-progress-fill{display:block;width:100%;height:100%;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,#c4b5fd,#8dded3);will-change:transform}
+@media screen {
+  #experience .experience-card,#skills .skill-card,#projects .project-card,#education .education-card {
+    --tile-accent:#7251a6;--tile-tint:#f3edf9;--tile-border:#ded1ee;
+    border-color:var(--tile-border);box-shadow:0 8px 28px rgba(43,52,78,.06);
+    transition:transform .25s ease,box-shadow .25s ease;
+  }
+  #experience .experience-card:nth-child(2),#skills .skill-card:nth-child(2),#projects .project-card:nth-child(2),#education .education-card:nth-child(2) {
+    --tile-accent:#247e75;--tile-tint:#eaf6f2;--tile-border:#c5e4dc;
+  }
+  #experience .experience-card:nth-child(3),#skills .skill-card:nth-child(3) {
+    --tile-accent:#386bad;--tile-tint:#edf3fc;--tile-border:#ceddf2;
+  }
+  #experience .experience-card:nth-child(4),#skills .skill-card:nth-child(4) {
+    --tile-accent:#a16b28;--tile-tint:#fcf3e7;--tile-border:#ecd9bd;
+  }
+  #experience .experience-card:nth-child(5) {
+    --tile-accent:#a44f6d;--tile-tint:#fbeef3;--tile-border:#efd1dd;
+  }
+  #experience .experience-card,#experience .experience-card:first-child {
+    background:linear-gradient(110deg,var(--tile-tint),#fff 65%);
+    border-top:1px solid var(--tile-border);border-left:4px solid var(--tile-accent);
+    border-radius:8px 20px 20px 8px;
+  }
+  #experience .experience-card::before {
+    background:var(--tile-accent);box-shadow:0 0 0 1px var(--tile-accent);left:-42px;
+  }
+  #experience .company{color:var(--tile-accent)}
+  #experience .experience-meta{border-right-color:var(--tile-border)}
+  #experience .tags span,#projects .tags span {
+    background:var(--tile-tint);border-color:var(--tile-border);color:#384358;
+  }
+  #skills .skill-card {
+    background:linear-gradient(150deg,var(--tile-tint),#fff);
+    border-top:4px solid var(--tile-accent);border-radius:12px 30px 12px 12px;
+  }
+  #skills .skill-card::after {
+    content:"";position:absolute;top:-42px;right:-42px;width:120px;height:120px;
+    border-radius:50%;border:18px solid var(--tile-accent);opacity:.065;pointer-events:none;
+  }
+  #skills .card-number {
+    display:grid;place-items:center;width:48px;height:48px;font-size:1.05rem;font-weight:600;
+    background:var(--tile-accent);color:white;border-radius:13px;margin-bottom:26px;
+  }
+  #skills .skill-card h3{color:var(--tile-accent)}
+  #projects .project-card{border-radius:16px;background:#fff}
+  #projects .project-content{background:linear-gradient(160deg,var(--tile-tint),#fff 75%)}
+  #projects .project-art {
+    border-bottom:3px solid var(--tile-accent);
+    background:linear-gradient(#ffffff0a 1px,transparent 1px),linear-gradient(90deg,#ffffff0a 1px,transparent 1px),linear-gradient(125deg,#414c68,#70618e);
+    background-size:24px 24px,24px 24px,auto;
+  }
+  #projects .project-card:nth-child(2) .project-art {
+    background:linear-gradient(#ffffff0a 1px,transparent 1px),linear-gradient(90deg,#ffffff0a 1px,transparent 1px),linear-gradient(125deg,#365669,#52877f);
+    background-size:24px 24px,24px 24px,auto;
+  }
+  #projects .project-status{color:var(--tile-accent);background:#fff;border-color:var(--tile-border)}
+  #education .education-card {
+    background:linear-gradient(110deg,var(--tile-tint),#fff 65%);
+    border-left:4px solid var(--tile-accent);border-radius:10px 20px 20px 10px;
+  }
+  #education .education-marker{background:var(--tile-accent);border:0;color:#fff}
+  #about .about-details {
+    border-left:4px solid #7251a6;background:linear-gradient(135deg,#f3edf9,#f5faf9);
+    box-shadow:0 10px 30px #28354b08;
+  }
+  .profile-facts{background:#f2f0f5}
+  .profile-facts>div{border-right:1px solid #d8d6df}
+  .profile-facts dt{color:#675575}
+  #resume .resume-panel{background:linear-gradient(115deg,#f1ebf9,#edf7f5);border-left:4px solid #7251a6}
+  #contact .contact-links a:nth-child(1){background:#f6f0fb;border-left-color:#7251a6}
+  #contact .contact-links a:nth-child(2){background:#edf4fc;border-left-color:#386bad}
+  #contact .contact-links a:nth-child(3){background:#edf7f3;border-left-color:#247e75}
+}
+@media screen and (hover:hover) and (prefers-reduced-motion:no-preference) {
+  #experience .experience-card:hover,#skills .skill-card:hover,#projects .project-card:hover,#education .education-card:hover {
+    transform:translateY(-4px);box-shadow:0 16px 35px rgba(43,52,78,.11);
+  }
+}
+@media screen and (max-width:760px) {
+  #experience .experience-card::before{left:-30px}
+  #experience .experience-meta{border-right:0;border-bottom-color:var(--tile-border)}
+}
+@media print{.reading-progress{display:none}}
