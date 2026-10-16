@@ -88,6 +88,35 @@ background:#62edb0;box-shadow:0 0 0 3px rgba(98,237,176,.12),0 0 10px rgba(98,23
 }
 @media print{.available-dot,#contact .contact-editorial .availability::before{animation:none;box-shadow:none}}
 </style>
+<style>
+/* Restrained portfolio motion, enabled only when requested by device settings. */
+@media(prefers-reduced-motion:no-preference){
+.personal-portrait::before{animation:portrait-accent-glow 7s ease-in-out infinite alternate}
+#education .education-editorial .qualification,
+#education .education-editorial .language-tile{transition:transform .25s ease,box-shadow .25s ease}
+#contact .contact-editorial .email .arrow,
+#contact .contact-editorial .linkedin .external{transition:transform .25s ease}
+}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+#education .education-editorial .qualification:hover,
+#education .education-editorial .language-tile:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(53,66,91,.09)}
+#contact .contact-editorial .email:hover .arrow,
+#contact .contact-editorial .linkedin:hover .external{transform:translate(3px,-3px)}
+}
+@keyframes portrait-accent-glow{
+from{border-color:rgba(196,181,253,.65);box-shadow:0 0 18px rgba(196,181,253,.10)}
+to{border-color:rgba(141,222,211,.65);box-shadow:0 0 26px rgba(141,222,211,.17)}
+}
+@media(prefers-reduced-motion:reduce){
+.personal-portrait,.personal-portrait::before,.hero-personal .hero-glow,
+#about .about-editorial .expertise,#skills .skills-editorial article,
+#experience .experience-card,#projects .project-card,
+#education .education-editorial .qualification,#education .education-editorial .language-tile,
+#contact .contact-editorial .email .arrow,#contact .contact-editorial .linkedin .external{
+animation:none;transition:none;transform:none}
+}
+@media print{.personal-portrait::before{animation:none;box-shadow:none}}
+</style>
 </head>
 
 <body>
@@ -393,5 +422,32 @@ background:#62edb0;box-shadow:0 0 0 3px rgba(98,237,176,.12),0 0 10px rgba(98,23
       <a href="#home" data-de="Zurück nach oben ↑">Back to top ↑</a>
     </div>
   </footer>
+<script>
+/* Reveal once on entry. Content remains visible when scripting is unavailable. */
+(function(){
+const preference=window.matchMedia("(prefers-reduced-motion: reduce)");
+if(!("IntersectionObserver" in window)||!("animate" in Element.prototype))return;
+const running=new Set();
+const selector="#about .intro-layout,#about .expertise,#about .approach,#experience .section-heading,#experience .experience-card,#skills .intro,#skills .deck article,#projects .section-heading,#projects .project-card,#education .heading,#education .qualification,#education .languages,#contact .contact-surface";
+const targets=Array.from(document.querySelectorAll(selector));
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(!entry.isIntersecting)return;
+observer.unobserve(entry.target);
+if(preference.matches)return;
+const animation=entry.target.animate([
+{opacity:0,transform:"translateY(16px)"},
+{opacity:1,transform:"translateY(0)"}
+],{duration:580,easing:"cubic-bezier(.2,.65,.3,1)",fill:"none"});
+running.add(animation);
+animation.finished.then(()=>running.delete(animation)).catch(()=>running.delete(animation));
+});
+},{threshold:.08});
+targets.forEach(el=>observer.observe(el));
+const stopMotion=()=>{if(preference.matches){running.forEach(animation=>animation.cancel());running.clear();}};
+if(preference.addEventListener)preference.addEventListener("change",stopMotion);
+window.addEventListener("beforeprint",()=>{observer.disconnect();running.forEach(animation=>animation.cancel());running.clear();});
+})();
+</script>
 </body>
 </html>
