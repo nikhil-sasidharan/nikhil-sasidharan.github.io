@@ -1,0 +1,38 @@
+name: Portfolio browser checks
+on:
+  pull_request:
+    paths:
+      - '*.html'
+      - '*.css'
+      - '*.js'
+      - 'cv/**'
+      - 'tests/**'
+      - '.github/workflows/portfolio-checks.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install test browser
+        run: |
+          npm install --prefix /tmp/portfolio-test playwright@1.56.1
+          /tmp/portfolio-test/node_modules/.bin/playwright install --with-deps chromium
+      - name: Test desktop, mobile, languages and reduced motion
+        env:
+          NODE_PATH: /tmp/portfolio-test/node_modules
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/portfolio-server.log 2>&1 &
+          for attempt in 1 2 3 4 5; do curl --silent --fail http://127.0.0.1:8765/ > /dev/null && break || sleep 1; done
+          node tests/verify.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: portfolio-browser-results
+          path: test-results/

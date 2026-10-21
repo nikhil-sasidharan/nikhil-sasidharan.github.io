@@ -84,6 +84,10 @@ function setLanguage(language) {
       ? "Nikhil Sasidharan | Supply Chain & Operative Exzellenz"
       : "Nikhil Sasidharan | Supply Chain & Operational Excellence";
 
+  if (document.body.classList.contains("resume-page")) {
+    document.title = selectedLanguage === "de" ? "Nikhil Sasidharan | Lebenslauf" : "Nikhil Sasidharan | Résumé";
+  }
+
   saveLanguage(selectedLanguage);
 }
 
